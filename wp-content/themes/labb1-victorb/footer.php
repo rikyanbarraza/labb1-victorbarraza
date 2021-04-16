@@ -1,4 +1,4 @@
-
+<!-- vad som ska bli footer i php -->
 <footer id="footer">
 			<div class="container">
 				<div class="row top">

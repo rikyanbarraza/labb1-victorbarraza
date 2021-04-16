@@ -1,3 +1,4 @@
+<!-- strukturen på hur sidan ska laddas i php -->
 <?php get_header();
 
 while(have_posts()){

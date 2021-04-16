@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- vad som ska bli header i php -->
 <?php wp_head(); ?>
 </head>
 <body>

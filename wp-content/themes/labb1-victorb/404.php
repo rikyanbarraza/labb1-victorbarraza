@@ -1,3 +1,4 @@
+<!-- fel medelande när sidan ej hittas -->
 <?php get_header(); ?>
 <div class=”error-message”>
 <h1>Oh no!</h1>

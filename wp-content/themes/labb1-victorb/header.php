@@ -6,7 +6,9 @@
 	<title><?php bloginfo( 'name' ); ?></title>
 	<?php wp_head(); ?>
 </head>
-<header id="header">
+<body>
+<div id="wrap">
+	<header id="header">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-8 col-sm-6">

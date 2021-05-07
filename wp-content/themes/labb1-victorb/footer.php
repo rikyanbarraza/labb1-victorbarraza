@@ -44,7 +44,11 @@
 				</div>
 			</div>
 		</footer>
-<?php wp_footer(); ?>    
-</body>
-</html>
-<html>
+		<!-- för att visa admin panelen 
+		PS tar jag bort wp_footer så försvinner notice:4757 som dyker upp längst ner,
+		men förlorar adminpanelen på toppen -->
+		<?php wp_footer(); ?>
+		</div>
+	
+	</body>
+	</html>

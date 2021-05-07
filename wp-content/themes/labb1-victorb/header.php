@@ -14,6 +14,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-8 col-sm-6">	
+												<!-- för att kunna hämta hemsidans namn via WP -->
 						<a class="logo" href="index.html"><?php bloginfo('name'); ?></a>
 					</div>
 					<div class="col-sm-6 hidden-xs">

@@ -2,6 +2,7 @@
 <?php get_header(); ?>
 
 <?php
+// while loopen startar
 while(have_posts()) {
     the_post(); ?>
     <main>

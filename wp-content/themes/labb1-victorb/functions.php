@@ -13,8 +13,9 @@
 }
 add_action('wp_enqueue_scripts', 'min_css_och_js_funktion' );
 
-// lägga till "utvald bild" och menyer så det syns i wp editorn för sidor och inlägg 
+// lägga till "utvald bild", menyer och widgets så det syns i wp editorn för sidor och inlägg 
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
+add_theme_support('widgets')
 
 ?>

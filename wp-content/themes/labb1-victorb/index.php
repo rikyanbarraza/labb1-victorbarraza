@@ -1,19 +1,20 @@
 <!-- strukturen på hur indexsidan ska laddas i php -->	
+<!-- hämtar header.php -->
 <?php get_header(); ?>
 <?php
 // while loopen startar
-while (have_posts()){
-	the_post();
-?>			
+while(have_posts()) {
+	the_post(); ?>			
 		<main>
 			<section>
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="hero">
-								<!-- hämta img filen via WP -->
+								<!-- hämta sidoinläggets "Utvald bild" via WP -->
 								<img src="<?php the_post_thumbnail_url()?>" />
 								<div class="text">
+									<!-- hämtar sidinläggets brödtext -->
 									<p><?php the_content(); ?></</p>
 								</div>
 							</div>
@@ -24,10 +25,5 @@ while (have_posts()){
 		</main>
 <!-- här slutar loopen -->
 <?php } ?>
+<!-- hämtar footer.php -->
 <?php get_footer(); ?>
-	
-	</div>
-	
-</body>
-</html>
-	

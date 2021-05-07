@@ -1,16 +1,20 @@
-<!-- strukturen på hur sidan ska laddas i php -->	
-		<?php get_header(); ?>
-			
+<!-- strukturen på hur indexsidan ska laddas i php -->	
+<?php get_header(); ?>
+<?php
+// while loopen startar
+while (have_posts()){
+	the_post();
+?>			
 		<main>
 			<section>
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="hero">
-								<img src="<?php echo get_template_directory_uri().'/assets/img/city.jpg'; ?>" />
+								<!-- hämta img filen via WP -->
+								<img src="<?php the_post_thumbnail_url()?>" />
 								<div class="text">
-									<h1><?php get_post(); ?></h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex.</p>
+									<p><?php the_content(); ?></</p>
 								</div>
 							</div>
 						</div>
@@ -18,8 +22,7 @@
 				</div>
 			</section>
 		</main>
-        <?php get_footer(); ?>
-		</div>
-
-</body>
-</html>
+<!-- här slutar loopen -->
+<?php } ?>
+<?php get_footer(); ?>
+	

@@ -3,7 +3,9 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
+	<!-- function för att ändra namn på hemsidan som syns via fliken på hemsidan och går att ändra via wp -->
 	<title><?php bloginfo( 'name' ); ?></title>
+	<!-- hämta funktionerna ur funtions.php som länkar samman CSS och JS med hemsidan  -->
 	<?php wp_head(); ?>
 </head>
 <body>
@@ -11,17 +13,12 @@
 	<header id="header">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-8 col-sm-6">
-						<a class="logo" href="index.html"><?php bloginfo( 'name' ); ?></a>
+					<div class="col-xs-8 col-sm-6">	
+						<a class="logo" href="index.html"><?php bloginfo('name'); ?></a>
 					</div>
 					<div class="col-sm-6 hidden-xs">
-						<form id="searchform" class="searchform">
-							<div>
-								<label class="screen-reader-text">Sök efter:</label>
-								<input type="text" />
-								<input type="submit" value="Sök" />
-							</div>
-						</form>
+							<!-- få sök funktionen att fungera med wp -->
+						<?php get_search_form(); ?>
 					</div>
 					<div class="col-xs-4 text-right visible-xs">
 						<div class="mobile-menu-wrap">
@@ -47,30 +44,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
+						<!-- hämtar menyn ordning från WP -->
 						<?php wp_nav_menu( array( 'menu_class' => 'menu', 'container' => 'ul', )); ?>
-						<!-- <ul class="menu">
-							<li class="current-menu-item">
-								<a href="index.html">Hem</a>
-							</li>
-							<li>
-								<a href="blogg.html">Blogg</a>
-							</li>
-							<li>
-								<a href="undersida.html">Undersida</a>
-							</li>
-							<li>
-								<a href="undersida2.html">Undersida 2</a>
-							</li>
-							<li>
-								<a href="undersida3.html">Undersida 3</a>
-							</li>
-							<li>
-								<a href="undersida4.html">Undersida 4</a>
-							</li>
-							<li>
-								<a href="kontakt.html">Kontakt</a>
-							</li>
-						</ul> -->
 					</div>
 				</div>
 			</div>

@@ -25,8 +25,3 @@ while (have_posts()){
 <!-- här slutar loopen -->
 <?php } ?>
 <?php get_footer(); ?>
-	
-	</div>
-	
-</body>
-</html>

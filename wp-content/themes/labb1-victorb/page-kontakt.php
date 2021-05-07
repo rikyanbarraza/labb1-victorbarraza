@@ -30,7 +30,7 @@ while(have_posts()) {
 
 <?php get_footer(); ?>
 
-</div>
+	</div>
 	
-    </body>
-    </html>
+</body>
+</html>

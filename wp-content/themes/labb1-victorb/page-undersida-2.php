@@ -1,13 +1,12 @@
 <!-- hämtar header.php -->
 <?php get_header(); ?>
-
-<?php
-// while loopen startar
-while(have_posts()) {
-    the_post(); ?>
         <main>
 			<section>
 				<div class="container">
+					<!-- while loopen startar -->
+					<?php
+					while(have_posts()) {
+						the_post(); ?>
 					<div class="row">
 						<div id="primary" class="col-xs-12 col-md-9 col-md-push-3">
                             <!-- hämtar sidinläggets rubrik -->
@@ -18,25 +17,17 @@ while(have_posts()) {
 						<aside id="secondary" class="col-xs-12 col-md-3 col-md-pull-9">
 							<ul class="side-menu">
 								<li>
-									<a href="undersida.html">Undersida</a>
-								</li>
-								<li>
-									<a href="undersida2.html">Undersida 2</a>
-								</li>
-								<li>
-									<a href="undersida3.html">Undersida 3</a>
-								</li>
-								<li>
-									<a href="undersida4.html">Undersida 4</a>
+								<!-- egen meny med hyperlänk som går att ändra via WP -->
+								<a href=<?php wp_nav_menu( array( 'menu' => 'undermeny', 'container' => 'ul' )); ?></a>
 								</li>
 							</ul>
 						</aside>
 					</div>
+					<!-- här slutar loopen -->
+					<?php }
+					?>
 				</div>
 			</section>
 		</main>
-<!-- här slutar loopen -->
-<?php }
-?>
 <!-- hämtar footer.php -->
 <?php get_footer(); ?>

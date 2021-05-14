@@ -14,8 +14,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-8 col-sm-6">	
-												<!-- för att kunna hämta hemsidans namn via WP -->
-						<a class="logo" href="index.html"><?php bloginfo('name'); ?></a>
+							<!-- för att kunna hämta hemsidans namn via WP -->
+							<a class="logo" href="
+							<?php bloginfo('url'); ?>">
+							<?php bloginfo('name'); ?>
+						</a>
 					</div>
 					<div class="col-sm-6 hidden-xs">
 							<!-- få sök funktionen att fungera med wp -->
@@ -46,7 +49,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<!-- hämtar menyn ordning från WP -->
-						<?php wp_nav_menu( array( 'menu_class' => 'menu', 'container' => 'ul', )); ?>
+						<?php wp_nav_menu( array( 'menu' => 'huvudmeny', 'container' => 'ul', )); ?>
 					</div>
 				</div>
 			</div>

@@ -49,7 +49,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<!-- hämtar menyn ordning från WP -->
-						<?php wp_nav_menu( array( 'menu_class' => 'menu', 'container' => 'ul', )); ?>
+						<?php wp_nav_menu( array( 'menu' => 'huvudmeny', 'container' => 'ul', )); ?>
 					</div>
 				</div>
 			</div>

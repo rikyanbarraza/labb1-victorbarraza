@@ -68,17 +68,17 @@
 									<ul role="navigation">
 										<li class="pagenav">
 										<h2>Sidor</h2>
-										<!-- egen meny med hyperlänk som går att ändra via WP -->
+                                        <!-- egen meny med hyperlänk som går att ändra via WP -->
 										<?php wp_nav_menu( array( 'menu' => 'bloggmeny', 'container' => 'li' )); ?>
 										</li>
 										<li>
 											<h2>Arkiv</h2>
-											<!-- egen meny med hyperlänk som går att ändra via WP -->
+                                            <!-- egen meny med hyperlänk som går att ändra via WP -->
 											<?php wp_nav_menu( array( 'menu' => 'arkiv', 'container' => 'li' )); ?>
 										</li>
 										<li class="categories">
 											<h2>Kategorier</h2>
-											<!-- egen meny med hyperlänk som går att ändra via WP -->
+                                            <!-- egen meny med hyperlänk som går att ändra via WP -->
 											<?php wp_nav_menu( array( 'menu' => 'kategorier', 'container' => 'li' )); ?>
 										</li>
 									</ul>

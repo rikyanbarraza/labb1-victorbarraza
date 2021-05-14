@@ -1,6 +1,11 @@
 <?php
- // Function för at få fram CSS och JS med hjälp av php
+// Få bort felmeddelandet op_end_flush():
+remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+add_action( 'shutdown', function() {
+   while ( @ob_end_flush() );
+} );
 
+ // Function för at få fram CSS och JS med hjälp av php
  function min_css_och_js_funktion(){
     
      wp_enqueue_style( 'main-bootstrap', get_template_directory_uri(). '/assets/css/bootstrap.css');

@@ -1,78 +1,47 @@
 <!-- blogginlägg -->
 <?php get_header(); ?>
 
-<?php
-// while loopen startar
-while(have_posts()) {
-    the_post(); ?>
+
+
     <main>
 			<section>
 				<div class="container">
 					<div class="row">
 						<div id="primary" class="col-xs-12 col-md-9">
-							<h1>Blogg</h1>
+                            <!--  while loopen startar -->
+                            <?php while(have_posts()) {
+                            the_post(); ?>
 							<article>
-								<img src="<?php echo get_template_directory_uri().'/assets/img/washington.jpg' ?>" />
+                                <!-- hämta sidoinläggets "Utvald bild" via WP -->
+								<img src="<?php the_post_thumbnail_url(); ?>">
 								<h2 class="title">
-									<a href="inlagg.html">Det tredje inlägget</a>
+                                    <?php the_title(); ?>
+									<a href="<?php the_permalink(); ?>"></a>
 								</h2>
 								<ul class="meta">
 									<li>
-										<i class="fa fa-calendar"></i> 1 januari, 2016
+										<i class="fa fa-calendar"></i>
+										<!-- hämtar datum från inlägget -->
+                                        <?php echo get_the_date('l j F , Y'); ?>
 									</li>
 									<li>
-										<i class="fa fa-user"></i> <a href="forfattare.html">Peter Pärmenäs</a>
+										<i class="fa fa-user"></i>
+										<!-- hämtar förfatarens namn och derigerar till deras sida -->
+                                        <?php the_author_posts_link(); ?>
 									</li>
 									<li>
-										<i class="fa fa-tag"></i> <a href="kategori.html">Kategori 1</a>, <a href="kategori.html">Kategori 2</a>
+										<i class="fa fa-tag"></i> 
+										<!-- Hämtar och skriver ut dom olika kategorierna -->
+                                        <?php the_category(','); ?>
 									</li>
 								</ul>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex. Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis. In sed mi mi. Praesent condimentum sollicitudin nibh. Vivamus vulputate purus quis volutpat fringilla. Ut tortor libero, semper eget dolor vel, hendrerit tempus dui. Suspendisse dictum efficitur blandit. In porta scelerisque nulla ac placerat.</p>
+								<!-- skriver ut brödtexten -->
+								<p><?php the_content(); ?></p>
 							</article>
-							<article>
-								<img src="<?php echo get_template_directory_uri().'/assets/img/paris.jpg' ?>" />
-								<h2 class="title">
-									<a href="inlagg.html">Mitt andra inlägg</a>
-								</h2>
-								<ul class="meta">
-									<li>
-										<i class="fa fa-calendar"></i> 1 januari, 2016
-									</li>
-									<li>
-										<i class="fa fa-user"></i> <a href="forfattare.html">John Doe</a>
-									</li>
-									<li>
-										<i class="fa fa-tag"></i> <a href="kategori.html">Kategori 1</a>, <a href="kategori.html">Kategori 3</a>
-									</li>
-								</ul>
-								<p>Integer quis eros at urna pulvinar mollis eget quis ex. Nam fringilla tellus at ligula consequat, sed sagittis ipsum ultricies. Nunc pretium bibendum enim id iaculis. Nam sed leo non sem aliquam imperdiet dictum vitae magna. Phasellus ac accumsan dolor, quis congue mauris. Maecenas vehicula, arcu sed congue euismod, mi urna rhoncus nunc, et feugiat arcu tellus vitae odio. Sed luctus vel lorem vel dictum. Suspendisse potenti. Proin vel efficitur ex. Suspendisse scelerisque rutrum mattis. In sed laoreet augue, non maximus ante. Nam a rhoncus ligula. Aliquam at aliquet lorem. Suspendisse non risus tincidunt, gravida augue non, fringilla libero.</p>
-							</article>
-							<article>
-								<img src="<?php echo get_template_directory_uri().'/assets/img/london.jpg' ?>" />
-								<h2 class="title">
-									<a href="inlagg.html">Hej världen!</a>
-								</h2>
-								<ul class="meta">
-									<li>
-										<i class="fa fa-calendar"></i> 1 januari, 2016
-									</li>
-									<li>
-										<i class="fa fa-user"></i> <a href="forfattare.html">Peter Pärmenäs</a>
-									</li>
-									<li>
-										<i class="fa fa-tag"></i> <a href="kategori.html">Kategori 1</a>, <a href="kategori.html">Kategori 2</a>, <a href="kategori.html">Kategori 3</a>
-									</li>
-								</ul>
-								<p>Sed pretium metus in urna vehicula imperdiet. Fusce at odio vitae felis maximus tincidunt. Nunc porttitor ex a elementum dictum. Maecenas eget arcu nulla. Cras auctor dui aliquet, condimentum orci vel, venenatis nisl. Ut semper magna urna, ac congue dui cursus vitae. Nam sed pharetra leo, vel tincidunt est. Phasellus volutpat tortor nec nulla feugiat congue. Donec quis ligula varius, euismod nisl eu, aliquet metus. Aliquam tempus iaculis odio, sed volutpat mi aliquam aliquet.</p>
-							</article>
-							<nav class="navigation pagination">
-								<h2 class="screen-reader-text">Inläggsnavigering</h2>
-								<a class="prev page-numbers" href="">Föregående</a>
-								<span class="page-numbers current">1</span>
-								<a class="page-numbers" href="">2</a>
-								<a class="next page-numbers" href="">Nästa</a>
-							</nav>
-						</div>
+							<!-- slutar loopen -->
+							<?php }
+							?>
+                            </div>
 						<aside id="secondary" class="col-xs-12 col-md-3">
 							<div id="sidebar">
 								<ul>
@@ -146,7 +115,4 @@ while(have_posts()) {
 				</div>
 			</section>
 		</main>
-<?php }
-?>
-
 <?php get_footer(); ?>

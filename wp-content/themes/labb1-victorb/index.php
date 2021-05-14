@@ -12,8 +12,9 @@ while(have_posts()) {
 						<div class="col-xs-12">
 							<div class="hero">
 								<!-- hämta sidoinläggets "Utvald bild" via WP -->
-								<img src="<?php the_post_thumbnail_url()?>" />
+								<img src="<?php the_post_thumbnail_url(); ?>" />
 								<div class="text">
+									<h1><?php the_title(); ?></h1>
 									<!-- hämtar sidinläggets brödtext -->
 									<p><?php the_content(); ?></</p>
 								</div>

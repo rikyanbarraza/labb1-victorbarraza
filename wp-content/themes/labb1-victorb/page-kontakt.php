@@ -14,16 +14,6 @@ while(have_posts()) {
                         <h2><?php the_title(); ?></h2>
                         <!-- hämtar sidinläggets brödtext -->
                          <p><?php the_content(); ?></p>
-                            <form>
-								<label>Namn</label>
-								<input type="text" />
-								<label>E-post</label>
-								<input type="email" />
-								<label>Meddelande</label>
-								<textarea></textarea>
-								<input type="submit" value="Skicka" />
-							</form>
-							</form>
 						</div>
 					</div>
 				</div>
